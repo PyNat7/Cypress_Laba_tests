@@ -1,10 +1,10 @@
 // cypress/e2e/laba_test.spec.cy.js
-import MainPage from '../support/MainPage.js';
-import CoursesPage from 'Users/nataliiapyvovarenko/Desktop/QA/cypress-example-Laba_test/cypress/cypress/support/CoursesPage.js';
+import MainPage from '../support/MainPage';
+import CoursesPage from '../support/CoursesPage';
 
 describe('Laba website Tests', () => {
   const mainPage = new MainPage();
-  const coursesPage = new CoursesPage();
+  //const coursesPage = new CoursesPage();
 
   beforeEach(() => {
     mainPage.visit();
@@ -15,10 +15,10 @@ describe('Laba website Tests', () => {
     mainPage.openMenu();
     mainPage.clickCourses();
 
-    coursesPage.waitForFilters();
-    coursesPage.applyHRFilter();
-    coursesPage.applyThisWeekFilter();
-    coursesPage.addFirstCourseToCart();
-    coursesPage.verifyCourseAdded();
+    CoursesPage.waitForFilters();
+    CoursesPage.applyHRFilter();
+    CoursesPage.applyThisWeekFilter();
+    CoursesPage.addFirstCourseToCart();
+    CoursesPage.verifyCourseAdded();
   });
 });
