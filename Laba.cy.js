@@ -54,7 +54,7 @@ describe('Laba website Tests', () => {
            cy.get('@firstCourse')
              .scrollIntoView()
              .should('exist')
-             .click();
+             .click({ force: true });
 
         } else {
           cy.log('No HR courses — trying Business & Management');
